@@ -1,10 +1,17 @@
-const merge = require('webpack-merge');
-const config = require('./base');
+const path = require("path");
+const merge = require("webpack-merge");
+const config = require("./base");
 
 module.exports = merge(config, {
-  mode: 'development',
-  devtool: 'cheap-eval-sourcemap',
+  mode: "development",
+  devtool: "cheap-module-eval-source-map",
   devServer: {
-    port: 9000,
+    contentBase: path.resolve(__dirname, "../dist"),
+    port: 9000
   },
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  }
 });

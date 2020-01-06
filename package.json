@@ -6,24 +6,33 @@
   "repository": "https://github.com/lunarscents/account-book.git",
   "author": "lunarscents <lunarscents7@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config .webpack/development.js --env.development --open",
+    "dev": "webpack --config .webpack/development.js --env.development",
+    "prod": "webpack --config .webpack/production.js --env.production --env.NODE_ENV=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "ts-loader": "^6.2.1",
+    "babel-loader": "^8.0.6",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2"
-  },
-  "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "dev": "webpack-dev-server --mode development",
-    "prod": "webpack --mode production"
-  },
-  "devDependencies": {
-    "html-webpack-plugin": "^3.2.0"
   }
 }
